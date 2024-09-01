@@ -22,6 +22,8 @@ export async function createPengaduan(data) {
             id_masyarakat : session.user.id,
         },
     });
+    revalidatePath("/")
+    revalidatePath("/pengaduan");
 
     return { success: true }
 }
