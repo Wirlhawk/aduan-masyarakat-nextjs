@@ -9,7 +9,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import TableDropdown from './TableDropDown';
+import TableDropdown from './TableDropdown';
 import { Card } from '../ui/card';
 
 

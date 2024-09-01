@@ -22,7 +22,7 @@ import { Label } from "@/components/ui/label";
 import { Trash2, Pencil, EllipsisVertical } from "lucide-react";
 
 
-export default function TabledropDown({user}) {
+export default function Tabledropdown({user}) {
     return (
         <Dialog>
             <DropdownMenu>
