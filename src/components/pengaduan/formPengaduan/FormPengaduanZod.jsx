@@ -86,7 +86,7 @@ export default function FormPengaduanZod() {
                             name="judul"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Judu Pengaduan</FormLabel>
+                                    <FormLabel>Judul Pengaduan</FormLabel>
                                     <FormControl>
                                         <Input
                                             placeholder="Masukan Judul Pengaduan"

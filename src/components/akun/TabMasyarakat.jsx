@@ -31,6 +31,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import TableAkun from "./TableAkun";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 
 // fetch user
 const users = [
@@ -64,8 +72,8 @@ const users = [
     },
 ];
 
-export default function TabMasyarakat() {
-  return (
-      <TableAkun users={users} />
-  )
+export default function TabMasyarakat({users}) {
+    return (
+        <TableAkun users={users} type="Masyarakat"/>
+    );
 }

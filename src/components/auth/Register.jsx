@@ -35,6 +35,7 @@ const Register = () => {
 
     const onSubmit = async (data) => {
         setError('')
+        setSuccess('')
         const res = await register(data)
 
         if (res.error) {

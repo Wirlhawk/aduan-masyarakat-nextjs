@@ -99,58 +99,47 @@ export const Sidebar = () => {
     );
 };
 
-export const SidebarSheet = () => (
-    <Sheet>
-        <SheetTrigger asChild>
-            <Button
-                variant="outline"
-                size="icon"
-                className="shrink-0 md:hidden"
-            >
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="flex flex-col">
-            <nav className="grid gap-2 text-lg font-medium">
-                <Link
-                    href="#"
-                    className="flex items-center gap-2 text-lg font-semibold"
+export const SidebarSheet = () => {
+    const { data: session } = useSession();
+    const pathName = usePathname();
+
+    const authorizedRoutes = mainRoutes.filter(({ role }) =>
+        role.includes(session?.user.role)
+    );
+    return (
+        <Sheet>
+            <SheetTrigger asChild>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="shrink-0 md:hidden"
                 >
-                    <Package2 className="h-6 w-6" />
-                    <span className="sr-only">Acme Inc</span>
-                </Link>
-                <NavLink
-                    href="#"
-                    icon={<Home className="h-5 w-5" />}
-                    text="Dashboard"
-                />
-                <NavLink
-                    href="#"
-                    icon={<ShoppingCart className="h-5 w-5" />}
-                    text="Orders"
-                    badge="6"
-                    active
-                />
-                <NavLink
-                    href="#"
-                    icon={<Package className="h-5 w-5" />}
-                    text="Products"
-                />
-                <NavLink
-                    href="#"
-                    icon={<Users className="h-5 w-5" />}
-                    text="Customers"
-                />
-                <NavLink
-                    href="#"
-                    icon={<LineChart className="h-5 w-5" />}
-                    text="Analytics"
-                />
-            </nav>
-        </SheetContent>
-    </Sheet>
-);
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="flex flex-col">
+                <nav className="grid gap-2 text-lg font-medium">
+                    <Link
+                        href="#"
+                        className="flex items-center gap-2 text-lg font-semibold"
+                    >
+                        <Package2 className="h-6 w-6" />
+                        <span className="sr-only">Acme Inc</span>
+                    </Link>
+                    {authorizedRoutes.map(({ href, text, icon }) => (
+                        <NavLink
+                            key={href}
+                            href={href}
+                            icon={icon}
+                            text={text}
+                        />
+                    ))}
+                </nav>
+            </SheetContent>
+        </Sheet>
+    );
+}
 
 export const NavLink = ({ href, icon, text, badge }) => {
     const pathName = usePathname();

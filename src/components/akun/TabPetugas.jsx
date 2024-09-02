@@ -31,25 +31,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import TableAkun from "./TableAkun";
+import CreateNewPetugas from "./CreateNewPetugas"
 
-const users = [
-    {
-        id: 1,
-        username: "admin",
-        nama: "admin",
-        telp: "0851314146",
-        createdAt: "2022-02-12",
-    },
-    {
-        id: 2,
-        username: "Pak Riyaldi",
-        nama: "karil",
-        telp: "053181358853",
-        createdAt: "2032-05-12",
-    },
 
-];
-
-export default function TabPetugas() {
-    return <TableAkun users={users} />;
+export default function TabPetugas({users}) {
+    return (
+        <TableAkun users={users} type="Petugas" action={ <CreateNewPetugas/> }/>
+    )
 }

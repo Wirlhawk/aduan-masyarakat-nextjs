@@ -123,7 +123,7 @@ export default async function Home() {
                         <ComplaintItem 
                             key={pengaduan.id}
                             name={pengaduan.masyarakat.username}
-                            complaint={pengaduan.isi_pengaduan}
+                            complaint={pengaduan.judul_pengaduan}
                             //   className="text-yellow-800"
                             status={{
                                 color: "yellow",
