@@ -12,8 +12,8 @@ import {
 } from "@/components/ui/card";
 
 export default async function page() {
-    const listPengaduan = await getLatestPengaduan(9);
-    console.log(listPengaduan)
+    const listPengaduan = await getAllPengaduan();
+    // console.log(listPengaduan)   
     return (
       <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 overflow-y-hidden">
           <PageTitle>List Pengaduan</PageTitle>

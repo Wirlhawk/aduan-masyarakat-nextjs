@@ -55,3 +55,38 @@ export async function getLatestPengaduan(number) {
     return pengaduanList;
 }
 
+export async function getPengaduan(id) {
+    return await prisma.pengaduan.findUnique({
+        where: {
+            id
+        },
+        include: {
+            masyarakat: true,
+
+        },
+    })
+}
+
+export async function updatePengaduanStatus(id,status) {
+    await prisma.pengaduan.update({
+        where : {
+            id
+        },
+        data : {
+            status 
+        }
+    })
+    revalidatePath(`/pengaduan/${id}`)
+}
+
+export async function countStatusPengaduan() {
+    return await prisma.pengaduan.groupBy({
+        by: ['status'],
+        _count: {
+            status: true,
+        },
+    });
+};
+
+
+

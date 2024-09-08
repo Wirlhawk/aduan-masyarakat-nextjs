@@ -51,6 +51,19 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        pending: {
+          DEFAULT: "var(--pending)",          
+          foreground: "var(--pending-foreground)",
+        },
+        proses: {
+          DEFAULT: "var(--proses)",            
+          foreground: "var(--proses-foreground)",  
+        },
+        selesai: {
+          DEFAULT: "var(--selesai)",           
+          foreground: "var(--selesai-foreground)",  
+        },
+
         
       },
       borderRadius: {

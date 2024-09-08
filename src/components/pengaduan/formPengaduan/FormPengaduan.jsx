@@ -28,7 +28,7 @@ export default function FormPengaduan() {
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImagePreview(reader.result);
-            };
+            }
             reader.readAsDataURL(file);
         }
     };
@@ -40,9 +40,6 @@ export default function FormPengaduan() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send the form data to your backend
-        console.log({ title, body, image });
-        // Reset form after submission
         setTitle("");
         setBody("");
         setImage(null);
@@ -50,7 +47,7 @@ export default function FormPengaduan() {
     };
 
     return (
-        <Card className="w-full md:w-[47%] ">
+        <Card className="w-full ">
             <CardHeader>
                 <CardTitle className="text-2xl font-bold inline-flex items-center gap-2">
                     <CirclePlus/>
@@ -111,7 +108,7 @@ export default function FormPengaduan() {
                                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                         <Upload className="w-8 h-8 mb-4 text-gray-500" />
                                         <p className="mb-2 text-sm text-gray-500 font-semibold">
-                                            Klik Untuk Mengupload Gambar
+                                            Upload Gambar
                                         </p>
                                     </div>
                                 )}

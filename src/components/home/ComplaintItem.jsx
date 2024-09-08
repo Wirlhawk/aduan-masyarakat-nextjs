@@ -7,7 +7,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import StatusBadge  from "@/components/StatusBadge";
 
 export default function ComplaintItem ({ name, complaint, status, className }) {
   return (
@@ -28,11 +28,9 @@ export default function ComplaintItem ({ name, complaint, status, className }) {
             <p className="text-sm font-medium leading-none">{name}</p>
             <p className="text-sm text-muted-foreground">{complaint}</p>
         </div>
-        <Badge
-            className={`ml-auto bg-${status.color}-100 text-${status.color}-800 `}
-        >
-            {status.text}
-        </Badge>
+        <span className="ml-auto">
+            <StatusBadge status={status}/>
+        </span>
     </div>
   )
 }

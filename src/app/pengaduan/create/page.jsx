@@ -13,8 +13,7 @@ import FormPengaduanZod from '@/components/pengaduan/formPengaduan/FormPengaduan
 export default function page() {
   return (
       <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-        <PageTitle>Buat Pengaduan Baru</PageTitle>
-
+          <PageTitle>Buat Pengaduan Baru</PageTitle>
 
           {/* <Card className="w-full">
               <CardHeader>
@@ -24,12 +23,11 @@ export default function page() {
                   </CardDescription>
               </CardHeader>
               <CardContent> */}
-                <div className="w-full flex justify-between">
-
-                  {/* <FormPengaduan/> */}
-                  <FormPengaduanZod/>
-                </div>
-              {/* </CardContent>
+          <div className="w-full flex justify-between">
+              {/* <FormPengaduan/> */}
+              <FormPengaduanZod />
+          </div>
+          {/* </CardContent>
           </Card> */}
       </main>
   );

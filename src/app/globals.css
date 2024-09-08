@@ -88,6 +88,15 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+  --pending: #fef9c3; /* yellow-100 */
+  --pending-foreground: #854d0e; /* yellow-800 */
+
+  --proses: #ede9fe; /* purple-100 */
+  --proses-foreground: #8b5cf6; /* purple-500 */
+
+  --selesai: #d1fae5; /* green-100 */
+  --selesai-foreground: #166534; /* green-800 */
   }
 
   .dark {
